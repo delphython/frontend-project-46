@@ -1,9 +1,9 @@
-import {fs} from 'fs';
+import {readFileSync} from 'node:fs';
 
 export const printJson = (inputFilePath) => {
-    const inputFile = fs.readFileSync(inputFilePath);
+    const inputFile = readFileSync(inputFilePath);
     
     const inputFileContent = JSON.parse(inputFile);
 
-    console.log(inputFileContent[0].value);
+    console.log(inputFileContent);
 }
