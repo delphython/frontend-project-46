@@ -1,4 +1,5 @@
 import app from './index.js';
+import printJson from './index.js';
 import { Command } from "commander";
 
 const program = new Command();
@@ -10,7 +11,11 @@ program
   .option('-f, --format', 'output format')
   .helpOption('-h, --help', 'output usage information')
   .argument('<filepath1>', '')
-  .argument('<filepath2>', '');
+  .argument('<filepath2>', '')
+  .action((filepath1, filepath2) => {
+    printJson(filepath1);
+    printJson(filepath2);
+  });
 
 export default () => {
   app(program);
