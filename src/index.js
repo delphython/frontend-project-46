@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {printJson} from './parsefile.js'
+import {genDiff} from './parsefile.js'
 
 const app = (program) => {
     program
