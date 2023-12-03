@@ -12,8 +12,7 @@ const app = (program) => {
         .argument('<filepath1>', '')
         .argument('<filepath2>', '')
         .action((filepath1, filepath2) => {
-            printJson(filepath1);
-            printJson(filepath2);
+            genDiff(filepath1, filepath2);
         });
   
     program.parse(process.argv);
