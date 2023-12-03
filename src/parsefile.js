@@ -59,6 +59,8 @@ const getEqInBothFiles = (obj1, obj2) => {
 };
 
 export const genDiff = (inputFile1, inputFile2) => {
+    let diffText = '{\n';
+
     const file1Content = getFileContent(inputFile1);
     const file2Content = getFileContent(inputFile2);
     
@@ -68,5 +70,12 @@ export const genDiff = (inputFile1, inputFile2) => {
 
     const diff = [...diffInSecondFile, ...diffInFirstFile, ...eqInBothFiles];
     const sortedDiff = _.sortBy(diff, [(obj) => [obj[0], obj[3]]]);
-    console.log(sortedDiff);
+
+    sortedDiff.forEach((item) => {
+        diffText += `  ${item[2]} ${item[0]}: ${item[1]}\n`;
+    });
+
+    diffText += '}'
+    
+    console.log(diffText);
 };
