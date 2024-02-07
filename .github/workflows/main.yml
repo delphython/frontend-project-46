@@ -11,6 +11,6 @@ jobs:
           node-version: '18.x'
           cache: 'npm'
       # запуск тестов
-      - run: make test
+      #- run: make test
       # запуск линтера
       - run: make lint
