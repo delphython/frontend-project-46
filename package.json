@@ -15,5 +15,8 @@
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
   }
 }
