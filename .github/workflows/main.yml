@@ -33,10 +33,17 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '20'
+          distribution: 'temurin'
       - name: Install Dependencies
         run: npm install
-      - run: make lint
-      - run: make test
+      - name: Make lint
+        run: make lint
+      - name: Make test
+        run: make test
       - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
