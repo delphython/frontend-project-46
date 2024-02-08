@@ -58,7 +58,7 @@ const getEqInBothFiles = (obj1, obj2) => {
     return result;
 };
 
-export const genDiff = (inputFile1, inputFile2) => {
+const genDiff = (inputFile1, inputFile2) => {
     let diffText = '{\n';
 
     const file1Content = getFileContent(inputFile1);
@@ -77,5 +77,7 @@ export const genDiff = (inputFile1, inputFile2) => {
 
     diffText += '}'
     
-    console.log(diffText);
+    return diffText;
 };
+
+export default genDiff;
