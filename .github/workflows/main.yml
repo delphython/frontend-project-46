@@ -33,6 +33,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - name: Install Dependencies
+        run: npm install
       # - run: make install
       - run: make lint
       - run: make test
