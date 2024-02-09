@@ -9,6 +9,4 @@ lint:
 test:
 	npx jest
 test-coverage:
-	./gradlew jacocoTestReport
-test-cov:
 	npm test -- --coverage --coverageProvider=v8
