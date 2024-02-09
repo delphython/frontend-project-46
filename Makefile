@@ -9,4 +9,4 @@ lint:
 test:
 	npx jest
 test-coverage:
-	npm jacocoTestReport
+	./gradlew jacocoTestReport
