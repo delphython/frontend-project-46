@@ -16,11 +16,11 @@ jobs:
           java-version: '20'
           distribution: 'temurin'
       - name: Build with Gradle
-        uses: gradle/gradle-build-action@v3
+        uses: gradle/gradle-build-action@v2
         with:
-          arguments: build
+          # arguments: build
           # build-root-directory: app
-          gradle-version: current
+          gradle-version: 8.3
           gradle-home-cache-cleanup: true
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
