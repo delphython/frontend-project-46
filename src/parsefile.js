@@ -1,6 +1,7 @@
-import {readFileSync} from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { cwd } from 'node:process';
 import { resolve } from 'node:path';
+import { yaml } from 'js-yaml';
 import _ from 'lodash';
 
 const getFileContent = (inputFilePath) => {
@@ -14,6 +15,8 @@ const getFileContent = (inputFilePath) => {
 
     if (fileExt === 'json') {
         inputFileContent = JSON.parse(inputFile);
+    } else if (fileExt === 'yml') {
+        inputFileContent = yaml.load(inputFile);
     }
 
     return inputFileContent;
