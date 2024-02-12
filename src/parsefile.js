@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { cwd } from 'node:process';
 import { resolve } from 'node:path';
-import { yaml } from 'js-yaml';
+import * as yaml from 'js-yaml';
 import _ from 'lodash';
 
 const getFileContent = (inputFilePath) => {
