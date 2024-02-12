@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import genDiff from './parsefile.js'
+import genDiff from './parsers.js'
 
 const app = (program) => {
     program
