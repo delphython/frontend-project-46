@@ -15,7 +15,7 @@ const getFileContent = (inputFilePath) => {
 
     if (fileExt === 'json') {
         inputFileContent = JSON.parse(inputFile);
-    } else if (fileExt === 'yml') {
+    } else if (fileExt === 'yml' || fileExt === 'yaml') {
         inputFileContent = yaml.load(inputFile);
     }
 
