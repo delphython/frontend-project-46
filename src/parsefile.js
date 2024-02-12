@@ -79,6 +79,8 @@ const genDiff = (inputFile1, inputFile2) => {
     });
 
     diffText += '}'
+
+    console.log(diffText);
     
     return diffText;
 };
