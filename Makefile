@@ -4,6 +4,8 @@ gendiff:
 	node bin/gendiff.js
 publish:
 	npm publish --dry-run
+link:
+	npx link
 lint:
 	npx eslint .
 test:
