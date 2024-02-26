@@ -17,5 +17,8 @@
 ### Run for stylish formatter
 [![asciicast](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq.svg)](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq)
 
-### Run for plain fomrmatter
+### Run for plain formmatter
 [![asciicast](https://asciinema.org/a/uMY5PIQjubz3tfRDvQZBncgu3.svg)](https://asciinema.org/a/uMY5PIQjubz3tfRDvQZBncgu3)
+
+### Run for json formatter
+[![asciicast](https://asciinema.org/a/uES23mHuvZeSaUxORLnxo2MmI.svg)](https://asciinema.org/a/uES23mHuvZeSaUxORLnxo2MmI)
