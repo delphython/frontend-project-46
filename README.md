@@ -16,3 +16,6 @@
 
 ### Run for stylish formatter
 [![asciicast](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq.svg)](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq)
+
+### Run for plain fomrmatter
+[![asciicast](https://asciinema.org/a/uMY5PIQjubz3tfRDvQZBncgu3.svg)](https://asciinema.org/a/uMY5PIQjubz3tfRDvQZBncgu3)
