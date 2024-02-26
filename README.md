@@ -13,3 +13,6 @@
 
 ### Run for YAML files
 [![asciicast](https://asciinema.org/a/KBwx8Mib1poLpWTb3PpOZbLJb.svg)](https://asciinema.org/a/KBwx8Mib1poLpWTb3PpOZbLJb)
+
+### Run for stylish formatter
+[![asciicast](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq.svg)](https://asciinema.org/a/RhdCg6I5SLORDutyfXTaY1QCq)
