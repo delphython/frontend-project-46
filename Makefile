@@ -7,7 +7,7 @@ publish:
 link:
 	npx link
 lint:
-	npx eslint .
+	npx eslint src
 test:
 	npx jest
 test-coverage:
