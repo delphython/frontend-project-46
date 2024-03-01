@@ -16,7 +16,4 @@ program
         genDiff(filepath1, filepath2, options.format);
     });
   
-program.parse(process.argv);
-if (!program.args.length) {
-    program.help();
-}
+program.parse();
