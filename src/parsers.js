@@ -1,24 +1,15 @@
-import { readFileSync } from 'node:fs';
-import { cwd } from 'node:process';
-import { resolve } from 'node:path';
 import * as yaml from 'js-yaml';
 
-const getFileContent = (inputFilePath) => {
-    var inputFileContent = '';
-
-    const absPAth = resolve(cwd(), inputFilePath);
-
-    const fileExt = absPAth.split('.').pop();
-
-    const inputFile = readFileSync(absPAth);
-
-    if (fileExt === 'json') {
-        inputFileContent = JSON.parse(inputFile);
-    } else if (fileExt === 'yml' || fileExt === 'yaml') {
-        inputFileContent = yaml.load(inputFile);
+const parsers = (content, formatName) => {
+    switch (formatName) {
+      case 'json':
+        return JSON.parse(content);
+      case 'yml':
+      case 'yaml':
+        return yaml.load(content);
+      default:
+        throw new Error('Invalid file format! Try supported formats.');
     }
+  };
 
-    return inputFileContent;
-};
-
-export default getFileContent;
+export default parsers;
