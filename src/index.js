@@ -11,7 +11,7 @@ const absPAth = (inputFile) => resolve(cwd(), inputFile);
 const getFileContent = (inputFile) => readFileSync(absPAth(inputFile));
 const getFileFormat = (inputFile) => absPAth(inputFile).split('.').pop();
 
-const genDiff = (inputFile1, inputFile2, formatName='stylish') => {
+export default (inputFile1, inputFile2, formatName='stylish') => {
     const file1Content = parsers(getFileContent(inputFile1), getFileFormat(inputFile1));
     const file2Content = parsers(getFileContent(inputFile2), getFileFormat(inputFile2));
 
@@ -21,5 +21,3 @@ const genDiff = (inputFile1, inputFile2, formatName='stylish') => {
     
     return formattedDiff;
 };
-
-export default genDiff;
