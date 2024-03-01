@@ -1,22 +1,18 @@
 #!/usr/bin/env node
 
-import genDiff from './parsers.js'
+import buildDiff from './builddiff.js'
+import format from './formatters/index.js'
+import getFileContent from './parsers.js'
 
-const app = (program) => {
-    program
-        .name('gendiff')
-        .description('Compares two configuration files and shows a difference.')
-        .version('0.0.1')
-        .option('-f, --format <type>', 'output format', 'stylish')
-        .helpOption('-h, --help', 'output usage information')
-        .argument('<filepath1>', '')
-        .argument('<filepath2>', '')
-        .action((filepath1, filepath2, options) => {
-            genDiff(filepath1, filepath2, options.format);
-        });
-  
-    program.parse(process.argv);
-    if (!program.args.length) program.help();
+const genDiff = (inputFile1, inputFile2, formatName='stylish') => {
+    const file1Content = getFileContent(inputFile1);
+    const file2Content = getFileContent(inputFile2);
+
+    const diffTree = buildDiff(file1Content, file2Content);
+    const formattedDiff = format(diffTree, formatName);
+    console.log(formattedDiff);
+    
+    return formattedDiff;
 };
-  
-export default app;
+
+export default genDiff;
