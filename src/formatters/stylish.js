@@ -30,19 +30,19 @@ const stringify = (val, depth) => {
 const stylish = (tree, depth = 1) => {
   const indents = createIndents(depth);
 
-  const items = tree.map((item) => {
-    const makeValue = stringify(item.value, depth + 1);
-    switch (item.type) {
+  const items = tree.map(({type, name, value, value1, value2, children}) => {
+    const makeValue = stringify(value, depth + 1);
+    switch (type) {
       case 'added':
-        return `${indents.leftIndent}+ ${item.name}: ${makeValue}`;
+        return `${indents.leftIndent}+ ${name}: ${makeValue}`;
       case 'deleted':
-        return `${indents.leftIndent}- ${item.name}: ${makeValue}`;
+        return `${indents.leftIndent}- ${name}: ${makeValue}`;
       case 'changed':
-        return `${indents.leftIndent}- ${item.name}: ${stringify(item.value1, depth + 1)}\n${indents.leftIndent}+ ${item.name}: ${stringify(item.value2, depth + 1)}`;
+        return `${indents.leftIndent}- ${name}: ${stringify(value1, depth + 1)}\n${indents.leftIndent}+ ${name}: ${stringify(value2, depth + 1)}`;
       case 'unchanged':
-        return `${indents.leftIndent}  ${item.name}: ${makeValue}`;
+        return `${indents.leftIndent}  ${name}: ${makeValue}`;
       case 'nested':
-        return `${indents.leftIndent}  ${item.name}: ${stylish(item.children, depth + 1)}`;
+        return `${indents.leftIndent}  ${name}: ${stylish(children, depth + 1)}`;
       default:
         throw new Error('This type is not in use.');
     }

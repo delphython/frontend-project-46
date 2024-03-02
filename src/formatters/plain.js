@@ -11,19 +11,19 @@ const plain = (tree) => {
   const iter = (currentValue, path) => {
     const lines = currentValue
       .filter(({ type }) => type !== 'unchanged')
-      .map((item) => {
-        const keys = [...path, item.name];
+      .map(({type, name, value, value1, value2, children}) => {
+        const keys = [...path, name];
         const property = keys.join('.');
 
-        switch (item.type) {
+        switch (type) {
           case 'added':
-            return `Property '${property}' was added with value: ${stringify(item.value)}`;
+            return `Property '${property}' was added with value: ${stringify(value)}`;
           case 'deleted':
             return `Property '${property}' was removed`;
           case 'changed':
-            return `Property '${property}' was updated. From ${stringify(item.value1)} to ${stringify(item.value2)}`;
+            return `Property '${property}' was updated. From ${stringify(value1)} to ${stringify(value2)}`;
           case 'nested':
-            return iter(item.children, keys);
+            return iter(children, keys);
           default:
             throw new Error('This type is not in use.');
         }
