@@ -30,7 +30,7 @@ const stringify = (val, depth) => {
 const stylish = (tree, depth = 1) => {
   const indents = createIndents(depth);
 
-  const items = tree.map(({ 
+  const items = tree.map(({
     type, name, value, value1, value2, children,
   }) => {
     const makeValue = stringify(value, depth + 1);
