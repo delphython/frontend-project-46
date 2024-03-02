@@ -11,7 +11,9 @@ const plain = (tree) => {
   const iter = (currentValue, path) => {
     const lines = currentValue
       .filter(({ type }) => type !== 'unchanged')
-      .map(({type, name, value, value1, value2, children}) => {
+      .map(({
+        type, name, value, value1, value2, children,
+      }) => {
         const keys = [...path, name];
         const property = keys.join('.');
 
